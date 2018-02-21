@@ -7,6 +7,7 @@ import ipaddress
 
 #First argument: The file contains IP/CIDR 
 #Second argument: Output file to append the IP addresses. 
+#If any error happens in CIDR notation the code writes them into the "exp_ips" file.
 ip_count = 0
 ex_ip_count = 0
 file_rd = open(sys.argv[1],"r")
