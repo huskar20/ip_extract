@@ -7,3 +7,5 @@ At the end, you have one new file with all the IP addresses extracted. However, 
 #If any error happens in CIDR notation the code writes them into the "exp_ips" file.
 
 *This is a python3 script. It does not work for python2.
+
+test
