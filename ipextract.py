@@ -10,14 +10,14 @@ import ipaddress
 #If any error happens in CIDR notation the code writes them into the "exp_ips" file.
 ip_count = 0
 ex_ip_count = 0
-file_rd = open(sys.argv[1],"r")
+file_rd = open(r"ipaddress_range.txt","r")
 for ipr in file_rd.readlines():
     try:
         _network = ipaddress.ip_network(ipr.strip())
         # Get all hosts on that network
         _hosts = list(_network.hosts())
         #open the file to write
-        file_wr = open(sys.argv[2],"a")  
+        file_wr = open(r"ip_results.txt","a")  
         # Print the IP addresses
         for i in _hosts:
             file_wr.write(str(i) + '\n') 
@@ -28,5 +28,5 @@ for ipr in file_rd.readlines():
         file_exp =open("exp_ips","a")
         file_exp.write(str(e) + '\n')
         ex_ip_count+=1
-print(str(ip_count) + " IP address are appended to " + sys.argv[2])
+print(str(ip_count) + " IP address are appended to " + "ip_results.txt")
 print(str(ex_ip_count) + " IP ranges has thrown exception.")
